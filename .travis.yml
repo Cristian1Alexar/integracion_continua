@@ -1,17 +1,17 @@
 language: node_js 
 node_js: 
 - 15.0.1 
-cache: npm 
+cache: yarn 
 
 install: 
-  - npm ci
+  - yarn install 
 script: 
-  - npm test 
-  - npm run build 
+  - yarn test 
+  - yarn run build 
 deploy:
   provider: pages 
   skip-cleanup: true 
   github-token: $GITHUB_TOKEN
   local_dir: build
   on: 
-    branch: master 
+    branch: gh-pages
